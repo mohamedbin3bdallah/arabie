@@ -1,0 +1,211 @@
+.sign-up {
+    @include section;
+    min-height: 500px;
+    .title {
+        @include title;
+    }
+    .item {
+        margin-top: $maxmargin;
+        @media (max-width: 991px) {
+            max-width: $fullwidth;
+            flex: $fullwidth;
+        }
+        img {
+            width: $fullwidth;
+        }
+        .fild {
+            margin-bottom: $maxmargin;
+            position: relative;
+            @media (max-width: 991px) {
+                max-width: $fullwidth;
+                flex: $fullwidth;
+            }
+            &:last-child {
+                margin: $zero;
+            }
+            .icon-pass {
+                @include position(absolute, $top: 18px, $right: 30px);
+                z-index: 10;
+                cursor: pointer;
+                color: $blak;
+                @include transition(all 0.5s ease-in-out 0s);
+                &.fas.fa-eye-slash.icon-pass {
+                    display: $none;
+                    color: $brouwn;
+                }
+            }
+            .text {
+                color: $blak;
+                font-weight: 600;
+                margin-bottom: $zero;
+                @media (max-width: 991px) {
+                    font-size: 13px;
+                }
+                a {
+                    text-decoration: underline;
+                    color: $brouwn;
+                    &:hover {
+                        text-decoration: $none;
+                    }
+                }
+            }
+            .bottom {
+                @include bottom;
+                display: inline-block;
+                min-width: 180px;
+                @include prefixer (box-shadow, 0px 0px 10px rgba(0, 0, 0, 0.1), webkit moz o ms);
+                @media (max-width: 991px) {
+                    min-width: 115px;
+                }
+            }
+            &.text-center {
+                .text {
+                    font-size: 13px;
+                    color: #343A40;
+                    margin-top: $minmargin;
+                }
+                .ithave {
+                    margin: $maxmargin $zero;
+                    a {
+                        text-decoration: $none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            .social {
+                width: $fullwidth;
+                display: flex;
+                justify-content: center;
+                margin-top: $minmargin;
+                a {
+                    @include flex;
+                    margin: $zero 5px;
+                    width: 55px;
+                    height: 55px;
+                    border: 1px solid #CED4DA;
+                    @include border-radius(50%);
+                    @include transition(all 0.5s ease-in-out 0s);
+                    &:hover {
+                        border: 1px solid $brouwn;
+                    }
+                    img {
+                        width: $auto;
+                        max-width: 20px;
+                    }
+                }
+            }
+            &.line-pass {
+                @include flex;
+                justify-content: space-between;
+                .forget {
+                    font-weight: 600;
+                    color: $blak;
+                    @include transition(all 0.5s ease-in-out 0s);
+                    &:hover {
+                        color: $brouwn;
+                    }
+                }
+            }
+        }
+        .sacand {
+            margin-top: $maxmargin;
+            font-size: 20px;
+        }
+    }
+}
+
+.form-control {
+    @include input;
+}
+
+textarea {
+    min-height: 300px;
+    resize: $none;
+}
+
+.floating-label {
+    position: absolute;
+    left: 20px;
+    top: 12px;
+    padding: $zero 10px;
+    background: $white;
+    width: calc(100% - 40px);
+    color: $blak;
+    margin: $zero;
+    font-weight: 600;
+    pointer-events: none;
+    @include transition(all 0.5s ease-in-out 0s);
+    @media (max-width: 991px) {
+        font-size: 13px;
+    }
+}
+
+.intl-tel-input input,
+.intl-tel-input input[type=text],
+.intl-tel-input input[type=tel] {
+    @media (max-width: 991px) {
+        font-size: 13px;
+    }
+}
+
+.che-box {
+    @include check-box;
+}
+
+select.form-control {
+    -webkit-appearance: none;
+}
+
+.iconsel {
+    @include position(absolute, $top: 20px, $right: 30px);
+    z-index: 10;
+    color: #C4C1C1;
+    font-size: 10px;
+}
+
+.form-control:focus~.floating-label,
+.form-control:not(:focus):valid~.floating-label {
+    top: -15px;
+    width: auto;
+}
+
+.intl-tel-input input:focus~.floating-label,
+.intl-tel-input input:not(:focus):valid~.floating-label {
+    top: -15px;
+    width: auto;
+}
+
+.textsacand {
+    display: $block;
+    font-size: 13px;
+    line-height: 19px;
+    margin: $zero;
+    margin-top: 10px;
+    position: relative;
+    padding-left: $minmargin+5px;
+    @media (max-width: 991px) {
+        font-size: 12px;
+    }
+    i {
+        position: absolute;
+        left: $zero;
+        top: 3px;
+        color: $brouwn;
+    }
+    a {
+        font-size: 13px;
+        color: $brouwn;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: $none;
+        }
+    }
+    &.mt {
+        margin: $maxmargin $zero;
+        @media (max-width: 991px) {
+            margin: $minmargin $zero;
+        }
+    }
+}
